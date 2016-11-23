@@ -15,6 +15,6 @@ RUN git clone https://github.com/openshift/test-pull-requests && \
     rm -rf test-pull-requests
 
 COPY ./jobs/* /var/lib/jenkins/jobs/
+COPY test_pull_requests_example.json /var/lib/jenkins/
 
-USER 1001
 CMD ["/usr/libexec/s2i/run"]
