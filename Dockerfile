@@ -10,8 +10,8 @@ RUN yum install -y ruby && \
 RUN git clone https://github.com/openshift/test-pull-requests && \
     mv test-pull-requests/test_pull_requests /usr/bin && \
     chmod +x /usr/bin/test_pull_requests && \
-    mkdir /var/lib/jenkins/merge_queue_records && \
-    touch /var/lib/jenkins/test_pull_requests_not_mergeable && \
+    mkdir /opt/openshift/configuration/merge_queue_records && \
+    touch /opt/openshift/configuration/test_pull_requests_not_mergeable && \
     rm -rf test-pull-requests
 
 RUN mkdir /opt/openshift/configuration/jobs/process_pull_requests
