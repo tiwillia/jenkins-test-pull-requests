@@ -14,7 +14,9 @@ RUN git clone https://github.com/openshift/test-pull-requests && \
     touch /var/lib/jenkins/test_pull_requests_not_mergeable && \
     rm -rf test-pull-requests
 
-COPY ./jobs/* /var/lib/jenkins/jobs/
-COPY test_pull_requests_example.json /var/lib/jenkins/
+RUN mkdir /opt/openshift/configuration/jobs/process_pull_requests
+
+COPY jobs/process_pull_requests/ /opt/openshift/configuration/jobs/process_pull_requests/
+COPY test_pull_requests_example.json /opt/openshift/configuration/
 
 CMD ["/usr/libexec/s2i/run"]
