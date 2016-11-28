@@ -41,7 +41,7 @@ then
 fi
 MERGE_QUEUE_NAME=&apos;example&apos;
 set +x
-echo &quot;MERGE_QUEUE_NAME Pulls:&quot;
+echo &quot;$MERGE_QUEUE_NAME Pulls:&quot;
 echo
 set -x
 /usr/bin/test_pull_requests $opts --config ~/test_pull_requests_${MERGE_QUEUE_NAME}.json</command>
